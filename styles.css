@@ -1,0 +1,731 @@
+/* ==========================================
+   Talk OCD - Website Styles
+   Color Scheme from Logo:
+   - Light Cyan: #C5E5E8
+   - Medium Blue: #5BA4C5
+   - Dark Teal: #1E4D5C
+   ========================================== */
+
+/* ==========================================
+   CSS Variables
+   ========================================== */
+:root {
+    --primary-color: #1E4D5C;
+    --secondary-color: #5BA4C5;
+    --light-bg: #C5E5E8;
+    --white: #FFFFFF;
+    --text-dark: #2C3E50;
+    --text-light: #F8F9FA;
+    --accent-light: #E8F4F7;
+    --shadow: rgba(30, 77, 92, 0.1);
+    --shadow-hover: rgba(30, 77, 92, 0.2);
+}
+
+/* ==========================================
+   Reset & Base Styles
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--white);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--primary-color);
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 80px 0;
+}
+
+/* ==========================================
+   Navigation Bar
+   ========================================== */
+#navbar {
+    background-color: var(--primary-color);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px var(--shadow);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-menu a {
+    color: var(--text-light);
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+
+/* Instagram Link */
+.instagram-link {
+    display: flex;
+    align-items: center;
+    color: var(--text-light);
+    margin-left: 1.5rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.instagram-link:hover {
+    color: var(--secondary-color);
+    transform: scale(1.1);
+}
+
+.instagram-link svg {
+    stroke: currentColor;
+}
+
+/* Hamburger Menu (Mobile) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-light);
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+/* ==========================================
+   Hero Section (Homepage)
+   ========================================== */
+.hero {
+    margin-top: 70px;
+    text-align: center;
+}
+
+.hero-banner {
+    width: 100%;
+    background-color: #e0f9fd;
+    padding: 3rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-banner-img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    padding: 0 20px;
+}
+
+.hero-content {
+    background-color: #e0f9fd;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.tagline {
+    font-size: 2rem;
+    font-style: italic;
+    color: var(--primary-color);
+    margin: 0;
+    max-width: 900px;
+    font-weight: 500;
+}
+
+/* ==========================================
+   Intro Section
+   ========================================== */
+.intro-section {
+    background-color: var(--white);
+}
+
+.intro-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    color: var(--text-dark);
+}
+
+.intro-text em {
+    color: var(--secondary-color);
+    font-weight: 600;
+    font-style: normal;
+}
+
+/* ==========================================
+   About Section
+   ========================================== */
+.about-section {
+    background-color: var(--accent-light);
+}
+
+.about-content {
+    display: grid;
+    gap: 2.5rem;
+}
+
+.about-block {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px var(--shadow-hover);
+}
+
+.team-photos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.team-member {
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+}
+
+.team-member img {
+    width: 100%;
+    max-width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--secondary-color);
+    box-shadow: 0 4px 15px var(--shadow);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member img:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 6px 20px var(--shadow-hover);
+}
+
+.member-name {
+    margin-top: 1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+.mission-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.mission-list li {
+    padding: 0.75rem 0 0.75rem 2rem;
+    position: relative;
+}
+
+.mission-list li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* ==========================================
+   What Is OCD Section
+   ========================================== */
+.what-is-ocd-section {
+    background-color: var(--white);
+}
+
+.ocd-content {
+    display: grid;
+    gap: 2.5rem;
+}
+
+.ocd-block {
+    background-color: var(--accent-light);
+    padding: 2rem;
+    border-radius: 10px;
+    border-left: 5px solid var(--secondary-color);
+}
+
+.ocd-block ul {
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+}
+
+.ocd-block li {
+    margin-bottom: 0.75rem;
+}
+
+.ocd-types {
+    list-style: none;
+    margin-left: 0;
+}
+
+.ocd-types li {
+    padding: 1rem;
+    background-color: var(--white);
+    margin-bottom: 0.75rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px var(--shadow);
+}
+
+/* ==========================================
+   Living With OCD Section
+   ========================================== */
+.living-section {
+    background-color: var(--light-bg);
+}
+
+.living-content {
+    display: grid;
+    gap: 2.5rem;
+}
+
+.living-block {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px var(--shadow);
+}
+
+.living-block ul {
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+}
+
+.living-block li {
+    margin-bottom: 0.5rem;
+}
+
+/* OCD Cycle Visualization */
+.ocd-cycle {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+    padding: 2rem;
+    background-color: var(--accent-light);
+    border-radius: 10px;
+}
+
+.cycle-step {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+    min-width: 150px;
+}
+
+.cycle-arrow {
+    font-size: 2rem;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.cycle-note {
+    text-align: center;
+    font-style: italic;
+    color: var(--text-dark);
+    margin-top: 1rem;
+}
+
+/* ==========================================
+   Ending Stigma Section
+   ========================================== */
+.stigma-section {
+    background-color: var(--white);
+}
+
+.stigma-content {
+    display: grid;
+    gap: 2.5rem;
+}
+
+.stigma-block {
+    background-color: var(--accent-light);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.language-examples {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.language-card {
+    background-color: var(--white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--secondary-color);
+    box-shadow: 0 2px 10px var(--shadow);
+}
+
+.language-card .label {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.language-card .arrow {
+    margin: 0.5rem 0;
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+}
+
+.change-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.change-list li {
+    padding: 0.75rem 0 0.75rem 2rem;
+    position: relative;
+}
+
+.change-list li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* ==========================================
+   Resources Section
+   ========================================== */
+.resources-section {
+    background-color: var(--accent-light);
+}
+
+.resources-content {
+    display: grid;
+    gap: 2.5rem;
+}
+
+.disclaimer {
+    background-color: #FFF3CD;
+    border-left: 5px solid #FFC107;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.disclaimer h3 {
+    color: #856404;
+    margin-bottom: 0.75rem;
+}
+
+.disclaimer p {
+    color: #856404;
+    margin-bottom: 0;
+}
+
+.resources-block {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.resource-list {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.resource-card {
+    padding: 1.5rem;
+    background-color: var(--accent-light);
+    border-radius: 8px;
+    border-left: 4px solid var(--secondary-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resource-card:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 15px var(--shadow);
+}
+
+.resource-card.highlight {
+    background-color: var(--light-bg);
+    border-left: 4px solid var(--primary-color);
+}
+
+.resource-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.resource-card .subtitle {
+    color: var(--secondary-color);
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+}
+
+.resource-contact {
+    font-size: 1.1rem;
+    margin: 0.75rem 0;
+    line-height: 1.8;
+}
+
+.resource-contact strong {
+    color: var(--primary-color);
+}
+
+/* ==========================================
+   Contact Section
+   ========================================== */
+.contact-section {
+    background-color: var(--white);
+    text-align: center;
+}
+
+.contact-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background-color: var(--light-bg);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-link:hover {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    transform: scale(1.05);
+}
+
+.social-link .icon {
+    font-size: 1.5rem;
+}
+
+/* ==========================================
+   Footer
+   ========================================== */
+footer {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    text-align: center;
+    padding: 2rem 0;
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
+
+/* ==========================================
+   Responsive Design
+   ========================================== */
+@media (max-width: 968px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: var(--primary-color);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        padding: 2rem 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .instagram-link {
+        position: absolute;
+        right: 60px;
+        margin-left: 0;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .tagline {
+        font-size: 1.5rem;
+    }
+
+    .ocd-cycle {
+        flex-direction: column;
+    }
+
+    .cycle-arrow {
+        transform: rotate(90deg);
+    }
+
+    .social-links {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 600px) {
+    section {
+        padding: 60px 0;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    .hero-banner {
+        padding: 2rem 0;
+    }
+
+    .hero-banner-img {
+        max-width: 100%;
+    }
+
+    .hero-content {
+        padding: 30px 20px;
+    }
+
+    .team-photos {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .team-member img {
+        max-width: 150px;
+        height: 150px;
+    }
+
+    .tagline {
+        font-size: 1.25rem;
+    }
+
+    .intro-text {
+        font-size: 1rem;
+    }
+
+    .about-block,
+    .ocd-block,
+    .living-block,
+    .stigma-block,
+    .resources-block {
+        padding: 1.5rem;
+    }
+}
